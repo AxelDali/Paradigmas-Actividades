@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 7</title>
+</head>
+<body>
+    <p>Escribe el primer número</p>
+    <input type="number" id="numero1">
+    <p>Escribe el segundo número</p>
+    <input type="number" id="numero2">
+    <p>Selecciona la operación</p>
+    <select id="opcion">
+        <option value="">Seleccionar</option>
+        <option value="1">Sumar</option>
+        <option value="2">Restar</option>
+        <option value="3">Multiplicar</option>
+    </select>
+    <button onclick="operacion()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        const operacion = () => {
+            let numero1 = document.getElementById("numero1").value;
+            let numero2 = document.getElementById("numero2").value;
+            let opcion = document.getElementById("opcion").value;
+            if(opcion == 1){
+                let resultado = parseInt(numero1) + parseInt(numero2);
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+            else if(opcion == 2){
+                let resultado = parseInt(numero1) - parseInt(numero2);
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+            else if(opcion == 3){
+                let resultado = parseInt(numero1) * parseInt(numero2);
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        }
+    </script>
+</body>
+</html>
